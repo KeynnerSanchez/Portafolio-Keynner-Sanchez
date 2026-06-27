@@ -1,0 +1,624 @@
+/*==========================================================
+    animations.css
+    PORTAFOLIO ULTRAKILL
+==========================================================*/
+
+/*==========================================================
+    VARIABLES DE ANIMACIÓN
+==========================================================*/
+
+:root{
+
+    --speed-fast:.25s;
+    --speed-normal:.5s;
+    --speed-slow:1.2s;
+
+}
+
+/*==========================================================
+    FADE UP
+==========================================================*/
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:1s;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*==========================================================
+    FADE LEFT
+==========================================================*/
+
+.fade-left{
+
+    opacity:0;
+
+    transform:translateX(-80px);
+
+    transition:1s;
+
+}
+
+.fade-left.show{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/*==========================================================
+    FADE RIGHT
+==========================================================*/
+
+.fade-right{
+
+    opacity:0;
+
+    transform:translateX(80px);
+
+    transition:1s;
+
+}
+
+.fade-right.show{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/*==========================================================
+    ZOOM
+==========================================================*/
+
+.zoom{
+
+    opacity:0;
+
+    transform:scale(.8);
+
+    transition:1s;
+
+}
+
+.zoom.show{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/*==========================================================
+    HERO IMAGE
+==========================================================*/
+
+.hero-image{
+
+    animation:heroFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes heroFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================================
+    LOGO
+==========================================================*/
+
+.logo img{
+
+    animation:rotateLogo 12s linear infinite;
+
+}
+
+@keyframes rotateLogo{
+
+    from{
+
+        transform:rotate(0);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/*==========================================================
+    BOTONES
+==========================================================*/
+
+.btn-red:hover{
+
+    animation:pulse .8s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*==========================================================
+    TARJETAS
+==========================================================*/
+
+.project-card:hover{
+
+    animation:projectHover .6s;
+
+}
+
+@keyframes projectHover{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-14px);
+
+    }
+
+    100%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/*==========================================================
+    GLOW ROJO
+==========================================================*/
+
+.glow{
+
+    animation:redGlow 2.5s infinite;
+
+}
+
+@keyframes redGlow{
+
+    0%{
+
+        box-shadow:0 0 0 rgba(255,0,0,0);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 40px rgba(255,0,0,.45);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 rgba(255,0,0,0);
+
+    }
+
+}
+
+/*==========================================================
+    GLITCH
+==========================================================*/
+
+.glitch{
+
+    position:relative;
+
+}
+
+.glitch::before,
+
+.glitch::after{
+
+    content:attr(data-text);
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    overflow:hidden;
+
+}
+
+.glitch::before{
+
+    color:red;
+
+    z-index:-1;
+
+}
+
+.glitch::after{
+
+    color:cyan;
+
+    z-index:-2;
+
+}
+
+.glitch:hover::before{
+
+    animation:glitchRed .25s infinite;
+
+}
+
+.glitch:hover::after{
+
+    animation:glitchBlue .25s infinite;
+
+}
+
+@keyframes glitchRed{
+
+    0%{
+
+        transform:translate(0);
+
+    }
+
+    25%{
+
+        transform:translate(-3px,2px);
+
+    }
+
+    50%{
+
+        transform:translate(2px,-2px);
+
+    }
+
+    75%{
+
+        transform:translate(-2px,-1px);
+
+    }
+
+    100%{
+
+        transform:translate(0);
+
+    }
+
+}
+
+@keyframes glitchBlue{
+
+    0%{
+
+        transform:translate(0);
+
+    }
+
+    25%{
+
+        transform:translate(3px,-2px);
+
+    }
+
+    50%{
+
+        transform:translate(-2px,2px);
+
+    }
+
+    75%{
+
+        transform:translate(2px,1px);
+
+    }
+
+    100%{
+
+        transform:translate(0);
+
+    }
+
+}
+
+/*==========================================================
+    SCANLINES
+==========================================================*/
+
+body::after{
+
+    animation:scanlines 8s linear infinite;
+
+}
+
+@keyframes scanlines{
+
+    from{
+
+        background-position:0 0;
+
+    }
+
+    to{
+
+        background-position:0 120px;
+
+    }
+
+}
+
+/*==========================================================
+    HOVER TECNOLOGÍAS
+==========================================================*/
+
+.tech-card:hover i{
+
+    animation:spinIcon .6s;
+
+}
+
+@keyframes spinIcon{
+
+    from{
+
+        transform:rotate(0);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/*==========================================================
+    SOCIAL
+==========================================================*/
+
+.social-links a:hover{
+
+    animation:bounce .5s;
+
+}
+
+.footer-social a:hover{
+
+    animation:bounce .5s;
+
+}
+
+@keyframes bounce{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    30%{
+
+        transform:translateY(-8px);
+
+    }
+
+    60%{
+
+        transform:translateY(3px);
+
+    }
+
+    100%{
+
+        transform:translateY(-5px);
+
+    }
+
+}
+
+/*==========================================================
+    TITULOS
+==========================================================*/
+
+.section-title h2{
+
+    animation:titleGlow 4s infinite;
+
+}
+
+@keyframes titleGlow{
+
+    0%{
+
+        text-shadow:0 0 0 rgba(255,0,0,0);
+
+    }
+
+    50%{
+
+        text-shadow:0 0 20px rgba(255,0,0,.55);
+
+    }
+
+    100%{
+
+        text-shadow:0 0 0 rgba(255,0,0,0);
+
+    }
+
+}
+
+/*==========================================================
+    BARRAS DE SKILLS
+==========================================================*/
+
+.skill-progress{
+
+    animation:loadBar 2s ease;
+
+}
+
+@keyframes loadBar{
+
+    from{
+
+        width:0;
+
+    }
+
+}
+
+/*==========================================================
+    TIMELINE
+==========================================================*/
+
+.timeline-dot{
+
+    animation:dotPulse 2s infinite;
+
+}
+
+@keyframes dotPulse{
+
+    0%{
+
+        box-shadow:0 0 0 rgba(255,196,0,0);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 20px rgba(255,196,0,.8);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 rgba(255,196,0,0);
+
+    }
+
+}
+
+/*==========================================================
+    FONDO HUD
+==========================================================*/
+
+.background-grid{
+
+    animation:gridMove 18s linear infinite;
+
+}
+
+@keyframes gridMove{
+
+    from{
+
+        background-position:0 0;
+
+    }
+
+    to{
+
+        background-position:60px 60px;
+
+    }
+
+}
+
+/*==========================================================
+    PARPADEO TERMINAL
+==========================================================*/
+
+.small-text{
+
+    animation:terminalBlink 1s infinite;
+
+}
+
+@keyframes terminalBlink{
+
+    0%,45%{
+
+        opacity:1;
+
+    }
+
+    50%,55%{
+
+        opacity:.3;
+
+    }
+
+    100%{
+
+        opacity:1;
+
+    }
+
+}
+
+/*==========================================================
+    FIN animations.css
+==========================================================*/
